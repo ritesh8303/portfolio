@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Avatar3D } from "./Avatar3D";
 import { certs, education, languages, profile } from "../data/profile";
 
 export function About() {
@@ -6,15 +7,15 @@ export function About() {
     <section className="section" id="about">
       <div className="about">
         <motion.div
-          className="about__portrait"
+          className="about__portrait about__portrait--3d"
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <img src={profile.avatar} alt={profile.name} />
+          <Avatar3D />
           <div className="about__badge">
             <span className="pulse pulse--on" />
-            {profile.location}
+            3D twin · ∞
           </div>
         </motion.div>
         <div>
@@ -27,6 +28,9 @@ export function About() {
             Gold datasets, Terraform, CI — still inside the AWS Free Tier.
           </p>
           <div className="chips">
+            <span className="chip" title="Mulank 8">
+              ∞ · Mulank 8
+            </span>
             {certs.map((c) => (
               <span key={c} className="chip">
                 {c.replace("AWS Academy Graduate — ", "AWS · ")}

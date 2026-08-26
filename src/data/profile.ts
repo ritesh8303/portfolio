@@ -24,7 +24,8 @@ export const profile = {
     dataforge: "https://ritesh8303.github.io/dataforge/",
     dataforgeCode: "https://github.com/ritesh8303/dataforge",
   },
-  avatar: "https://avatars.githubusercontent.com/u/92289300?v=4",
+  avatar: `${import.meta.env.BASE_URL}avatar.jpg`,
+  avatar3d: `${import.meta.env.BASE_URL}avatar-3d.png`,
 };
 
 export const education = [

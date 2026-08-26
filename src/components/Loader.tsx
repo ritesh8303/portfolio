@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { InfinityMark } from "./InfinityMark";
 
 const LINES = [
   "loading ritesh-v1 · local weights",
@@ -28,7 +29,10 @@ export function Loader({ ready }: { ready: boolean }) {
 
   return (
     <div className={`loader ${ready && step >= LINES.length ? "loader--out" : ""}`}>
-      <div className="loader__mark">RJ</div>
+      <div className="loader__brand">
+        <InfinityMark className="loader__inf" />
+        <div className="loader__mark">RJ</div>
+      </div>
       <div className="loader__bar">
         <i style={{ width: `${((step + (ready ? 1 : 0)) / (LINES.length + 1)) * 100}%` }} />
       </div>

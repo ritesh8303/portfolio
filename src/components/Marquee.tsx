@@ -1,4 +1,5 @@
 const TOKENS = [
+  "∞",
   "Python",
   "AWS Lambda",
   "Pydantic",

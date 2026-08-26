@@ -4,6 +4,8 @@ import { profile } from "../data/profile";
 import { useBerlinClock } from "../hooks/useBerlinClock";
 import type { LiveState } from "../hooks/useLiveData";
 import { formatInt, timeAgo } from "../lib/format";
+import { Avatar3D } from "./Avatar3D";
+import { InfinityMark } from "./InfinityMark";
 
 function TypeCycle({ words }: { words: string[] }) {
   const [index, setIndex] = useState(0);
@@ -55,6 +57,10 @@ export function Hero({ live }: { live: LiveState }) {
           {live.status === "live" ? "Model online" : live.status === "loading" ? "Sampling" : "Cached weights"}
           <span className="sep">/</span>
           {clock.date} · {clock.time} CET
+          <span className="sep">/</span>
+          <span className="mulank" title="Mulank 8 — Saturn · infinity">
+            <InfinityMark className="mulank__mark" /> 8
+          </span>
         </p>
         <h1>
           <span>Ritesh</span>
@@ -89,36 +95,19 @@ export function Hero({ live }: { live: LiveState }) {
       </motion.div>
 
       <motion.aside
-        className="model-card glass"
+        className="model-card glass model-card--twin"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.35 }}
       >
+        <Avatar3D compact />
         <header>
           <span className="pulse pulse--on" />
           <div>
-            <p>ritesh-v1</p>
-            <em>inference · this page</em>
+            <p>ritesh-v1 · 3D twin</p>
+            <em>move your pointer to orbit</em>
           </div>
         </header>
-        <dl>
-          <div>
-            <dt>context</dt>
-            <dd>live APIs · resume graph</dd>
-          </div>
-          <div>
-            <dt>tools</dt>
-            <dd>DataForge · GitHub · mail</dd>
-          </div>
-          <div>
-            <dt>region</dt>
-            <dd>eu-central-1 · Berlin</dd>
-          </div>
-          <div>
-            <dt>output</dt>
-            <dd>thesis · Werkstudent · intern</dd>
-          </div>
-        </dl>
         <p className="model-card__hint">
           Press <kbd>Ctrl</kbd>
           <kbd>K</kbd> or tap Ask

@@ -123,6 +123,17 @@ main { padding-bottom: 80px; }
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 .loader--out { opacity: 0; visibility: hidden; }
+.loader__brand {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.loader__inf {
+  width: 56px;
+  height: 56px;
+  color: var(--cyan);
+  filter: drop-shadow(0 0 12px rgba(125, 211, 252, 0.45));
+}
 .loader__mark {
   font-family: var(--font-display);
   font-size: 64px;
@@ -197,6 +208,13 @@ main { padding-bottom: 80px; }
   color: var(--cyan);
   font-family: var(--font-display);
 }
+.nav__brand strong { font-size: 14px; }
+.nav__inf {
+  width: 22px;
+  height: 22px;
+  color: var(--cyan);
+  opacity: 0.85;
+}
 .nav__links { display: flex; gap: 22px; }
 .nav__links a {
   text-decoration: none;
@@ -255,6 +273,17 @@ main { padding-bottom: 80px; }
   margin: 0 0 18px;
 }
 .sep { opacity: 0.4; }
+.mulank {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--violet);
+}
+.mulank__mark {
+  width: 22px;
+  height: 22px;
+  color: var(--cyan);
+}
 .pulse {
   width: 8px;
   height: 8px;
@@ -360,6 +389,14 @@ main { padding-bottom: 80px; }
   position: relative;
   z-index: 4;
 }
+.model-card--twin {
+  padding: 0 0 14px;
+  overflow: hidden;
+}
+.model-card--twin header,
+.model-card--twin .model-card__hint { padding: 0 18px; }
+.model-card--twin header { margin-top: 8px; }
+.avatar3d--compact { height: 300px; }
 .model-card header {
   display: flex;
   gap: 10px;
@@ -664,7 +701,7 @@ main { padding-bottom: 80px; }
 
 .about {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 320px 1fr;
   gap: 40px;
   align-items: start;
 }
@@ -675,6 +712,15 @@ main { padding-bottom: 80px; }
   border: 1px solid var(--line);
 }
 .about__portrait img { aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(0.92) contrast(1.05); }
+.about__portrait--3d {
+  background: radial-gradient(circle at 50% 30%, #1a1630, #07080f 70%);
+  min-height: 430px;
+}
+.avatar3d {
+  height: 430px;
+  width: 100%;
+}
+.avatar3d canvas { display: block; width: 100%; height: 100%; }
 .about__badge {
   position: absolute;
   left: 12px;
@@ -743,6 +789,26 @@ main { padding-bottom: 80px; }
   font-size: 13px;
   border-top: 1px solid var(--line);
 }
+.footer__loop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer__inf {
+  width: 18px;
+  height: 18px;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.infinity-stroke {
+  stroke-dasharray: 28 72;
+  stroke-dashoffset: 0;
+  animation: inf-flow 5.5s linear infinite;
+}
+@keyframes inf-flow {
+  to { stroke-dashoffset: -100; }
+}
 
 @media (max-width: 980px) {
   .telemetry, .project-grid, .about, .split, .contact, .project--feature, .telemetry__row, .hero__meta, .bento, .hero {
@@ -767,5 +833,6 @@ main { padding-bottom: 80px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .pulse--on, .type__caret, .aurora, .marquee__track, .agent-fab__orb { animation: none; }
+  .pulse--on, .type__caret, .aurora, .marquee__track, .agent-fab__orb, .infinity-stroke { animation: none; }
+  .infinity-stroke { stroke-dasharray: none; }
 }

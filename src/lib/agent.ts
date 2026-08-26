@@ -42,6 +42,11 @@ const KB: { keys: string[]; title: string; body: string }[] = [
     body: "Email riteshjadhav359@gmail.com · +49 176 22920991 · LinkedIn riteshjadhav8303 · GitHub ritesh8303. Berlin / Potsdam.",
   },
   {
+    keys: ["mulank", "infinity", "saturn", "numerology", "number 8"],
+    title: "Mulank 8",
+    body: "Mulank 8 is mine — Saturn, cycles, systems that keep running. On this site it shows up as ∞: the loop around the neural core, under the 3D twin, and in the nav. Same idea as a pipeline: ingest, gold, repeat.",
+  },
+  {
     keys: ["ai", "llm", "agent", "rag", "langchain", "ml"],
     title: "AI direction",
     body: "I am not a prompt-only profile. The thesis I want sits on DataForge: retrieval over live job data, LLM enrichment with evals, or AI-ready data quality. Computer vision internship at Marva.AI plus a multilingual medical-report summarization project. Agents only earn a place if they read the same Gold layer a human would trust.",

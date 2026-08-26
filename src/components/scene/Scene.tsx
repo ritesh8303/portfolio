@@ -2,6 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { useIsMobile, usePrefersReducedMotion } from "../../hooks/useMedia";
+import { InfinityLoop } from "./InfinityLoop";
 
 const VERT = `
 varying vec3 vN;
@@ -138,6 +139,9 @@ function SceneRig({ reduced, mobile }: { reduced: boolean; mobile: boolean }) {
   return (
     <group ref={group} position={mobile ? [0, -1.7, 0] : [1.15, 0.05, 0]} scale={mobile ? 0.72 : 1}>
       <IridescentCore reduced={reduced} />
+      <group rotation={[0.55, 0.2, 0.15]} position={[0, 0, 0]}>
+        <InfinityLoop size={2.05} tube={0.022} animate={!reduced} />
+      </group>
       <NeuralField count={mobile ? 18 : 28} />
     </group>
   );

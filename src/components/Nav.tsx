@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { InfinityMark } from "./InfinityMark";
 import { profile } from "../data/profile";
 
 const LINKS = [
@@ -26,6 +27,7 @@ export function Nav() {
       <a className="nav__brand" href="#top">
         <span>{profile.monogram}</span>
         <strong>{profile.shortName}</strong>
+        <InfinityMark className="nav__inf" />
       </a>
       <nav className="nav__links" aria-label="Primary">
         {LINKS.map((l) => (
