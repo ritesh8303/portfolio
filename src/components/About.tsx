@@ -15,7 +15,7 @@ export function About() {
           <Avatar3D />
           <div className="about__badge">
             <span className="pulse pulse--on" />
-            3D twin · ∞
+            3D twin · move your pointer
           </div>
         </motion.div>
         <div>
@@ -28,9 +28,6 @@ export function About() {
             Gold datasets, Terraform, CI — still inside the AWS Free Tier.
           </p>
           <div className="chips">
-            <span className="chip" title="Mulank 8">
-              ∞ · Mulank 8
-            </span>
             {certs.map((c) => (
               <span key={c} className="chip">
                 {c.replace("AWS Academy Graduate — ", "AWS · ")}

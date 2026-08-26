@@ -5,7 +5,6 @@ import { useBerlinClock } from "../hooks/useBerlinClock";
 import type { LiveState } from "../hooks/useLiveData";
 import { formatInt, timeAgo } from "../lib/format";
 import { Avatar3D } from "./Avatar3D";
-import { InfinityMark } from "./InfinityMark";
 
 function TypeCycle({ words }: { words: string[] }) {
   const [index, setIndex] = useState(0);
@@ -57,10 +56,6 @@ export function Hero({ live }: { live: LiveState }) {
           {live.status === "live" ? "Model online" : live.status === "loading" ? "Sampling" : "Cached weights"}
           <span className="sep">/</span>
           {clock.date} · {clock.time} CET
-          <span className="sep">/</span>
-          <span className="mulank" title="Mulank 8 — Saturn · infinity">
-            <InfinityMark className="mulank__mark" /> 8
-          </span>
         </p>
         <h1>
           <span>Ritesh</span>
